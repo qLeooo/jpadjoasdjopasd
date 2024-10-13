@@ -111,7 +111,7 @@ do -- // Utility
             local Passed, Statement = pcall(Func)
             --
             if not Passed and not Atlanta.Safe then
-                warn("Atlanta:\n", "              " .. Name .. ":", Statement)
+               -- warn("Atlanta:\n", "              " .. Name .. ":", Statement)
             end
         end or Func
         local Thread = Create(Func)
