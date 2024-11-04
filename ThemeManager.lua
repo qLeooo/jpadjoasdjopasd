@@ -4,17 +4,24 @@ local ThemeManager = {} do
 	-- if not isfolder(ThemeManager.Folder) then makefolder(ThemeManager.Folder) end
 
 	ThemeManager.Library = nil
-	ThemeManager.BuiltInThemes = {
-		['Default'] 		= { 1, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1c1c1c","AccentColor":"0055ff","BackgroundColor":"141414","OutlineColor":"323232"}') },
-		['BBot'] 			= { 2, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1e1e1e","AccentColor":"7e48a3","BackgroundColor":"232323","OutlineColor":"141414"}') },
-		['Fatality']		= { 3, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1e1842","AccentColor":"c50754","BackgroundColor":"191335","OutlineColor":"3c355d"}') },
-		['Jester'] 			= { 4, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"242424","AccentColor":"db4467","BackgroundColor":"1c1c1c","OutlineColor":"373737"}') },
-		['Mint'] 			= { 5, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"242424","AccentColor":"3db488","BackgroundColor":"1c1c1c","OutlineColor":"373737"}') },
-		['Tokyo Night'] 	= { 6, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"191925","AccentColor":"6759b3","BackgroundColor":"16161f","OutlineColor":"323232"}') },
-		['Ubuntu'] 			= { 7, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"3e3e3e","AccentColor":"e2581e","BackgroundColor":"323232","OutlineColor":"191919"}') },
-		['Quartz'] 			= { 8, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"232330","AccentColor":"426e87","BackgroundColor":"1d1b26","OutlineColor":"27232f"}') },
-	}
-
+ThemeManager.BuiltInThemes = {
+    ['Default'] = { 1, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1c1c1c","AccentColor":"0055ff","BackgroundColor":"141414","OutlineColor":"323232"}') },
+    ['BBot'] = { 2, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1e1e1e","AccentColor":"7e48a3","BackgroundColor":"232323","OutlineColor":"141414"}') },
+    ['Fatality'] = { 3, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"1e1842","AccentColor":"c50754","BackgroundColor":"191335","OutlineColor":"3c355d"}') },
+    ['Jester'] = { 4, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"242424","AccentColor":"db4467","BackgroundColor":"1c1c1c","OutlineColor":"373737"}') },
+    ['Mint'] = { 5, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"242424","AccentColor":"3db488","BackgroundColor":"1c1c1c","OutlineColor":"373737"}') },
+    ['Tokyo Night'] = { 6, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"191925","AccentColor":"6759b3","BackgroundColor":"16161f","OutlineColor":"323232"}') },
+    ['Ubuntu'] = { 7, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"3e3e3e","AccentColor":"e2581e","BackgroundColor":"323232","OutlineColor":"191919"}') },
+    ['Quartz'] = { 8, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"232330","AccentColor":"426e87","BackgroundColor":"1d1b26","OutlineColor":"27232f"}') },
+    
+    -- New themes added below
+    ['Comet'] = { 9, httpService:JSONDecode('{"MainColor":"0f0f0f","AccentColor":"5d589d","OutlineColor":"191919","BackgroundColor":"0f0f0f","FontColor":"5e5e5e"}') },
+    ['GameSense'] = { 10, httpService:JSONDecode('{"MainColor":"101010","AccentColor":"9cb819","OutlineColor":"2d2d2d","BackgroundColor":"111111","FontColor":"919191"}') },
+    ['Mae'] = { 11, httpService:JSONDecode('{"MainColor":"0f0f0f","AccentColor":"ffc6fe","OutlineColor":"191919","BackgroundColor":"0f0f0f","FontColor":"c5c5c5"}') },
+    ['pandahook.cc'] = { 12, httpService:JSONDecode('{"MainColor":"0f0f0f","AccentColor":"30406a","OutlineColor":"171717","BackgroundColor":"0f0f0f","FontColor":"aeaeae"}') },
+    ['sigmahook.cc'] = { 13, httpService:JSONDecode('{"MainColor":"0f0f0f","AccentColor":"929667","OutlineColor":"0b0b0b","BackgroundColor":"1b1b1b","FontColor":"bfbfbf"}') },
+    ['Tokyohook.cc'] = { 14, httpService:JSONDecode('{"MainColor":"191925","AccentColor":"6759b3","OutlineColor":"433e58","BackgroundColor":"16161f","FontColor":"ffffff"}') },
+}
 	function ThemeManager:ApplyTheme(theme)
 		local customThemeData = self:GetCustomTheme(theme)
 		local data = customThemeData or self.BuiltInThemes[theme]
