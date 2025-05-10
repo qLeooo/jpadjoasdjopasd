@@ -397,4 +397,5 @@ do -- Initalize
         end);
     end;
 end;
+ESPLib = ESP
 return ESP
