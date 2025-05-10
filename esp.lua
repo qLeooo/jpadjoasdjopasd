@@ -2,69 +2,69 @@ local Workspace, RunService, Players, CoreGui, Lighting = cloneref(game:GetServi
 
 local ESP = {
     Enabled = true,
-    TeamCheck = true,
+    TeamCheck = false,
     MaxDistance = 200,
     FontSize = 11,
     FadeOut = {
         OnDistance = true,
-        OnDeath = false,
-        OnLeave = false,
+        OnDeath = true,
+        OnLeave = true,
     },
     Options = { 
         Teamcheck = false, TeamcheckRGB = Color3.fromRGB(0, 255, 0),
-        Friendcheck = true, FriendcheckRGB = Color3.fromRGB(0, 255, 0),
+        Friendcheck = false, FriendcheckRGB = Color3.fromRGB(0, 255, 0),
         Highlight = false, HighlightRGB = Color3.fromRGB(255, 0, 0),
     },
     Drawing = {
         Chams = {
             Enabled  = true,
-            Thermal = true,
+            Thermal = false,
             FillRGB = Color3.fromRGB(119, 120, 255),
             Fill_Transparency = 100,
             OutlineRGB = Color3.fromRGB(119, 120, 255),
             Outline_Transparency = 100,
-            VisibleCheck = true,
+            VisibleCheck = false,
         },
         Names = {
             Enabled = true,
             RGB = Color3.fromRGB(255, 255, 255),
         },
         Flags = {
-            Enabled = true,
+            Enabled = false,
         },
         Distances = {
-            Enabled = true, 
+            Enabled = false, 
             Position = "Text",
             RGB = Color3.fromRGB(255, 255, 255),
         },
         Weapons = {
-            Enabled = true, WeaponTextRGB = Color3.fromRGB(119, 120, 255),
+            Enabled = false, WeaponTextRGB = Color3.fromRGB(119, 120, 255),
             Outlined = false,
             Gradient = false,
             GradientRGB1 = Color3.fromRGB(255, 255, 255), GradientRGB2 = Color3.fromRGB(119, 120, 255),
         },
         Healthbar = {
-            Enabled = true,  
-            HealthText = true, Lerp = false, HealthTextRGB = Color3.fromRGB(119, 120, 255),
+            Enabled = false,  
+            HealthText = false, Lerp = false, HealthTextRGB = Color3.fromRGB(119, 120, 255),
             Width = 2.5,
-            Gradient = true, GradientRGB1 = Color3.fromRGB(200, 0, 0), GradientRGB2 = Color3.fromRGB(60, 60, 125), GradientRGB3 = Color3.fromRGB(119, 120, 255), 
+            Gradient = false, GradientRGB1 = Color3.fromRGB(200, 0, 0), GradientRGB2 = Color3.fromRGB(60, 60, 125), GradientRGB3 = Color3.fromRGB(119, 120, 255), 
         },
         Boxes = {
-            Animate = true,
+            Animate = false,
             RotationSpeed = 300,
             Gradient = false, GradientRGB1 = Color3.fromRGB(119, 120, 255), GradientRGB2 = Color3.fromRGB(0, 0, 0), 
-            GradientFill = true, GradientFillRGB1 = Color3.fromRGB(119, 120, 255), GradientFillRGB2 = Color3.fromRGB(0, 0, 0), 
+            GradientFill = false, GradientFillRGB1 = Color3.fromRGB(119, 120, 255), GradientFillRGB2 = Color3.fromRGB(0, 0, 0), 
             Filled = {
-                Enabled = true,
+                Enabled = false,
                 Transparency = 0.75,
                 RGB = Color3.fromRGB(0, 0, 0),
             },
             Full = {
-                Enabled = true,
+                Enabled = false,
                 RGB = Color3.fromRGB(255, 255, 255),
             },
             Corner = {
-                Enabled = true,
+                Enabled = false,
                 RGB = Color3.fromRGB(255, 255, 255),
             },
         };
@@ -82,27 +82,7 @@ local camera = game.Workspace.CurrentCamera;
 local Cam = Workspace.CurrentCamera;
 local RotationAngle, Tick = -45, tick();
 
--- Weapon Images
-local Weapon_Icons = {
-    ["Wooden Bow"] = "http://www.roblox.com/asset/?id=17677465400",
-    ["Crossbow"] = "http://www.roblox.com/asset/?id=17677473017",
-    ["Salvaged SMG"] = "http://www.roblox.com/asset/?id=17677463033",
-    ["Salvaged AK47"] = "http://www.roblox.com/asset/?id=17677455113",
-    ["Salvaged AK74u"] = "http://www.roblox.com/asset/?id=17677442346",
-    ["Salvaged M14"] = "http://www.roblox.com/asset/?id=17677444642",
-    ["Salvaged Python"] = "http://www.roblox.com/asset/?id=17677451737",
-    ["Military PKM"] = "http://www.roblox.com/asset/?id=17677449448",
-    ["Military M4A1"] = "http://www.roblox.com/asset/?id=17677479536",
-    ["Bruno's M4A1"] = "http://www.roblox.com/asset/?id=17677471185",
-    ["Military Barrett"] = "http://www.roblox.com/asset/?id=17677482998",
-    ["Salvaged Skorpion"] = "http://www.roblox.com/asset/?id=17677459658",
-    ["Salvaged Pump Action"] = "http://www.roblox.com/asset/?id=17677457186",
-    ["Military AA12"] = "http://www.roblox.com/asset/?id=17677475227",
-    ["Salvaged Break Action"] = "http://www.roblox.com/asset/?id=17677468751",
-    ["Salvaged Pipe Rifle"] = "http://www.roblox.com/asset/?id=17677468751",
-    ["Salvaged P250"] = "http://www.roblox.com/asset/?id=17677447257",
-    ["Nail Gun"] = "http://www.roblox.com/asset/?id=17677484756"
-};
+
 
 -- Functions
 local Functions = {}
@@ -417,3 +397,4 @@ do -- Initalize
         end);
     end;
 end;
+return ESP
