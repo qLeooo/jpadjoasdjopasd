@@ -1,70 +1,70 @@
 local Workspace, RunService, Players, CoreGui, Lighting = cloneref(game:GetService("Workspace")), cloneref(game:GetService("RunService")), cloneref(game:GetService("Players")), game:GetService("CoreGui"), cloneref(game:GetService("Lighting"))
 
-getgenv().ESP = {
+local ESP = {
     Enabled = true,
-    TeamCheck = false,
+    TeamCheck = true,
     MaxDistance = 200,
     FontSize = 11,
     FadeOut = {
         OnDistance = true,
-        OnDeath = true,
-        OnLeave = true,
+        OnDeath = false,
+        OnLeave = false,
     },
     Options = { 
         Teamcheck = false, TeamcheckRGB = Color3.fromRGB(0, 255, 0),
-        Friendcheck = false, FriendcheckRGB = Color3.fromRGB(0, 255, 0),
+        Friendcheck = true, FriendcheckRGB = Color3.fromRGB(0, 255, 0),
         Highlight = false, HighlightRGB = Color3.fromRGB(255, 0, 0),
     },
     Drawing = {
         Chams = {
             Enabled  = true,
-            Thermal = false,
+            Thermal = true,
             FillRGB = Color3.fromRGB(119, 120, 255),
             Fill_Transparency = 100,
             OutlineRGB = Color3.fromRGB(119, 120, 255),
             Outline_Transparency = 100,
-            VisibleCheck = false,
+            VisibleCheck = true,
         },
         Names = {
             Enabled = true,
             RGB = Color3.fromRGB(255, 255, 255),
         },
         Flags = {
-            Enabled = false,
+            Enabled = true,
         },
         Distances = {
-            Enabled = false, 
+            Enabled = true, 
             Position = "Text",
             RGB = Color3.fromRGB(255, 255, 255),
         },
         Weapons = {
-            Enabled = false, WeaponTextRGB = Color3.fromRGB(119, 120, 255),
+            Enabled = true, WeaponTextRGB = Color3.fromRGB(119, 120, 255),
             Outlined = false,
             Gradient = false,
             GradientRGB1 = Color3.fromRGB(255, 255, 255), GradientRGB2 = Color3.fromRGB(119, 120, 255),
         },
         Healthbar = {
-            Enabled = false,  
-            HealthText = false, Lerp = false, HealthTextRGB = Color3.fromRGB(119, 120, 255),
+            Enabled = true,  
+            HealthText = true, Lerp = false, HealthTextRGB = Color3.fromRGB(119, 120, 255),
             Width = 2.5,
-            Gradient = false, GradientRGB1 = Color3.fromRGB(200, 0, 0), GradientRGB2 = Color3.fromRGB(60, 60, 125), GradientRGB3 = Color3.fromRGB(119, 120, 255), 
+            Gradient = true, GradientRGB1 = Color3.fromRGB(200, 0, 0), GradientRGB2 = Color3.fromRGB(60, 60, 125), GradientRGB3 = Color3.fromRGB(119, 120, 255), 
         },
         Boxes = {
-            Animate = false,
+            Animate = true,
             RotationSpeed = 300,
             Gradient = false, GradientRGB1 = Color3.fromRGB(119, 120, 255), GradientRGB2 = Color3.fromRGB(0, 0, 0), 
-            GradientFill = false, GradientFillRGB1 = Color3.fromRGB(119, 120, 255), GradientFillRGB2 = Color3.fromRGB(0, 0, 0), 
+            GradientFill = true, GradientFillRGB1 = Color3.fromRGB(119, 120, 255), GradientFillRGB2 = Color3.fromRGB(0, 0, 0), 
             Filled = {
-                Enabled = false,
+                Enabled = true,
                 Transparency = 0.75,
                 RGB = Color3.fromRGB(0, 0, 0),
             },
             Full = {
-                Enabled = false,
+                Enabled = true,
                 RGB = Color3.fromRGB(255, 255, 255),
             },
             Corner = {
-                Enabled = false,
+                Enabled = true,
                 RGB = Color3.fromRGB(255, 255, 255),
             },
         };
@@ -81,7 +81,6 @@ local lplayer = Players.LocalPlayer;
 local camera = game.Workspace.CurrentCamera;
 local Cam = Workspace.CurrentCamera;
 local RotationAngle, Tick = -45, tick();
-
 
 
 -- Functions
@@ -397,3 +396,4 @@ do -- Initalize
         end);
     end;
 end;
+return ESP
