@@ -1,7 +1,7 @@
 local Workspace, RunService, Players, CoreGui, Lighting = cloneref(game:GetService("Workspace")), cloneref(game:GetService("RunService")), cloneref(game:GetService("Players")), game:GetService("CoreGui"), cloneref(game:GetService("Lighting"))
 
 local ESP = {
-    Enabled = false,
+    Enabled = true,
     TeamCheck = false,
     MaxDistance = 200,
     FontSize = 11,
@@ -17,7 +17,7 @@ local ESP = {
     },
     Drawing = {
         Chams = {
-            Enabled  = false,
+            Enabled  = true,
             Thermal = false,
             FillRGB = Color3.fromRGB(119, 120, 255),
             Fill_Transparency = 100,
