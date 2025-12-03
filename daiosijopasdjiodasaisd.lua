@@ -285,3 +285,19 @@ if ClientEntity and ClientEntity.ReplicateFromServer then
     end
 end
 loadConfig()
+if not game:IsLoaded() then game.Loaded:Wait() end
+
+function missing(t, f, fallback)
+    if type(f) == t then return f end
+    return fallback
+end
+
+queueteleport =  missing("function", queue_on_teleport or (syn and syn.queue_on_teleport))
+local TeleportCheck = false
+Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if queueteleport then
+		TeleportCheck = true
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/qLeooo/jpadjoasdjopasd/refs/heads/main/daiosijopasdjiodasaisd.lua'))()")
+	end
+end)
+
